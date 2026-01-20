@@ -4,7 +4,7 @@
 //  AUTHOR: Rob Tillaart
 //    DATE: 2026-01-20
 // VERSION: 0.1.0
-// PURPOSE: Arduino library for PT2257
+// PURPOSE: Arduino library for the PT2257 two channel volume controller.
 //     URL: https://github.com/RobTillaart/PT2257
 //
 
@@ -18,9 +18,6 @@
 //  ERROR CODES
 //  values <> 0 are errors.
 #define PT2257_OK                  0x00
-#define PT2257_CRC_ERROR           0x01
-#define PT2257_NOT_READY           0x10
-#define PT2257_REQUEST_ERROR       0x11
 
 
 class PT2257

@@ -1,7 +1,7 @@
 {
   "name": "PT2257",
-  "keywords": "audio, stereo",
-  "description": "Arduino library for PT2257 audio device.",
+  "keywords": "0..-79 dB, stereo, mute, audio",
+  "description": "Arduino library for the PT2257 two channel volume controller.",
   "authors":
   [
     {

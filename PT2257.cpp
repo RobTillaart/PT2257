@@ -3,7 +3,7 @@
 //  AUTHOR: Rob Tillaart
 //    DATE: 2026-xx-xx
 // VERSION: 0.1.0
-// PURPOSE: Arduino library for PT2257
+// PURPOSE: Arduino library for the PT2257 two channel volume controller.
 //     URL: https://github.com/RobTillaart/PT2257
 
 
