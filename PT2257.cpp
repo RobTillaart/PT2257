@@ -69,7 +69,7 @@ bool PT2257::isMuted()
 bool PT2257::stereo(int dB)
 {
   dB = abs(dB);
-  if (db > 79) return false;
+  if (dB > 79) return false;
   _left = _right = dB;
   uint8_t v1 = 0xD0 + dB % 10;
   uint8_t v2 = 0xE0 + dB / 10;
@@ -80,7 +80,7 @@ bool PT2257::stereo(int dB)
 bool PT2257::left(int dB)
 {
   dB = abs(dB);
-  if (db > 79) return false;
+  if (dB > 79) return false;
   _left = dB;
   uint8_t v1 = 0xA0 + dB % 10;
   uint8_t v2 = 0xB0 + dB / 10;
@@ -91,7 +91,7 @@ bool PT2257::left(int dB)
 bool PT2257::right(int dB)
 {
   dB = abs(dB);
-  if (db > 79) return false;
+  if (dB > 79) return false;
   _right = dB;
   uint8_t v1 = 0x20 + dB % 10;
   uint8_t v2 = 0x30 + dB / 10;

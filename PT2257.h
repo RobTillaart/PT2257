@@ -50,6 +50,7 @@ private:
   uint8_t  _address = 0x2A;
   TwoWire* _wire;
   int      _write(uint8_t command);
+  int      _write2(uint8_t val1, uint8_t val2);
 
   int      _left  = 79;  //  holds absolute value
   int      _right = 79;  //  holds absolute value
