@@ -155,7 +155,15 @@ TODO: add + run performance sketch on hardware.
 
 #### Should
 
+- PT2259
+- 200 ms at startup.
+
 - add examples
+- optimize possible?
+- replace magic numbers by named ocnstants.
+- **void softMute()** bring back channels "slowly" to -79 dB
+- **void swapChannels()** swap left / right
+- **void balance(-100..+100)** how??
 
 #### Could
 

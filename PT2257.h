@@ -46,7 +46,7 @@ public:
   int      getLastError();
 
 
-private:
+protected:
   uint8_t  _address = 0x2A;
   TwoWire* _wire;
   int      _write(uint8_t command);
@@ -59,6 +59,20 @@ private:
   uint8_t  _error;
 };
 
+
+class PT2259 : public PT2257
+{
+public:
+  PT2259(TwoWire *wire = &Wire);
+
+  //  Functions, datasheet p.6
+  void     allOff();
+  void     mute(bool mute);
+  //  void     muteLeft(bool mute);    //  FAILS
+  //  void     muteRight(bool mute);   //  FAILS
+
+  // register clear function to investigate,
+}
 
 //  -- END OF FILE --
 

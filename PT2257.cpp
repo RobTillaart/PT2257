@@ -1,8 +1,8 @@
 //
 //    FILE: PT2257.cpp
 //  AUTHOR: Rob Tillaart
-//    DATE: 2026-xx-xx
-// VERSION: 0.1.0
+//    DATE: 2026-01-20
+// VERSION: 0.1.1
 // PURPOSE: Arduino library for the PT2257 two channel volume controller.
 //     URL: https://github.com/RobTillaart/PT2257
 
@@ -124,7 +124,7 @@ int PT2257::getLastError()
 
 ///////////////////////////////////////////////
 //
-//  PRIVATE
+//  PROTECTED
 //
 int PT2257::_write(uint8_t command)
 {
@@ -144,6 +144,38 @@ int PT2257::_write2(uint8_t val1, uint8_t val2)
 }
 
 
+///////////////////////////////////////////////
+//
+//  DERIVED
+//
+PT2259::PT2259(TwoWire *wire) : PT2257(wire)
+{
+}
+
+void PT2259::allOff()
+{
+  stereo(-79);  //  work around
+}
+
+void PT2259::mute(bool true)
+{
+  _muted = mute;
+  _write(mute ? 0x77 : 0x74 );
+}
+
+//  these fails as one need to keep the state per channel.
+//  so needs to reimplement the whole mute.
+// void PT2259::muteLeft(bool true)
+// {
+  // _muted = mute;
+  // _write(mute ? 0x76 : 0x74 );
+// }
+
+// void PT2259::muteRight(bool true)
+// {
+  // _muted = mute;
+  // _write(mute ? 0x75 : 0x74 );
+// }
 
 
 //  -- END OF FILE --
