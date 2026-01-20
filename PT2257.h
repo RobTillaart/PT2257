@@ -65,14 +65,18 @@ class PT2259 : public PT2257
 public:
   PT2259(TwoWire *wire = &Wire);
 
-  //  Functions, datasheet p.6
+  //  Functions, datasheet p.8
   void     allOff();
   void     mute(bool mute);
+  
+  //  these fails as one need to keep the state per channel.
+  //  so needs to reimplement the whole mute.
   //  void     muteLeft(bool mute);    //  FAILS
   //  void     muteRight(bool mute);   //  FAILS
 
-  // register clear function to investigate,
-}
+
+  // TODO register clear function to investigate,
+};
 
 //  -- END OF FILE --
 

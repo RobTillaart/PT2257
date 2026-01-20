@@ -157,21 +157,20 @@ void PT2259::allOff()
   stereo(-79);  //  work around
 }
 
-void PT2259::mute(bool true)
+void PT2259::mute(bool mute)
 {
   _muted = mute;
   _write(mute ? 0x77 : 0x74 );
 }
 
-//  these fails as one need to keep the state per channel.
-//  so needs to reimplement the whole mute.
-// void PT2259::muteLeft(bool true)
+//  FAILS
+// void PT2259::muteLeft(bool mute)
 // {
   // _muted = mute;
   // _write(mute ? 0x76 : 0x74 );
 // }
 
-// void PT2259::muteRight(bool true)
+// void PT2259::muteRight(bool mute)
 // {
   // _muted = mute;
   // _write(mute ? 0x75 : 0x74 );
