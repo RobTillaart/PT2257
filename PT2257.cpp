@@ -55,10 +55,16 @@ void PT2257::allOff()
   _write(0xFF);
 }
 
-void PT2257::mute(bool mute)
+void PT2257::mute()
 {
-  _muted = mute;
-  _write(mute ? 0x79 : 0x78 );
+  _muted = true;
+  _write(0x79);
+}
+
+void PT2257::muteOff()
+{
+  _muted = false;
+  _write(0x78);
 }
 
 bool PT2257::isMuted()
@@ -157,25 +163,35 @@ void PT2259::allOff()
   stereo(-79);  //  work around
 }
 
-void PT2259::mute(bool mute)
+void PT2259::mute()
 {
-  _muted = mute;
-  _write(mute ? 0x77 : 0x74 );
+  _muted = true;
+  _write(0x77);
 }
 
-//  FAILS
-// void PT2259::muteLeft(bool mute)
-// {
-  // _muted = mute;
-  // _write(mute ? 0x76 : 0x74 );
-// }
+void PT2259::muteOff()
+{
+  _muted = false;
+  _write(0x74);
+}
 
-// void PT2259::muteRight(bool mute)
-// {
-  // _muted = mute;
-  // _write(mute ? 0x75 : 0x74 );
-// }
+void PT2259::muteLeft()
+{
+  _muted = false;
+  _write(0x76);
+}
 
+void PT2259::muteRight()
+{
+  _muted = false;
+  _write(0x75);
+}
+
+
+void PT2259::clearRegister()
+{
+  _write(0xF0);
+}
 
 //  -- END OF FILE --
 

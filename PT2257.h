@@ -3,7 +3,7 @@
 //    FILE: PT2257.h
 //  AUTHOR: Rob Tillaart
 //    DATE: 2026-01-20
-// VERSION: 0.1.0
+// VERSION: 0.1.1
 // PURPOSE: Arduino library for the PT2257 two channel volume controller.
 //     URL: https://github.com/RobTillaart/PT2257
 //
@@ -13,7 +13,7 @@
 #include "Wire.h"
 
 
-#define PT2257_LIB_VERSION         (F("0.1.0"))
+#define PT2257_LIB_VERSION         (F("0.1.1"))
 
 //  ERROR CODES
 //  values <> 0 are errors.
@@ -32,7 +32,8 @@ public:
 
   //  Functions, datasheet p.6
   void     allOff();
-  void     mute(bool mute);
+  void     mute();
+  void     muteOff();
   bool     isMuted();
 
   //  dB = 0..79
@@ -67,16 +68,14 @@ public:
 
   //  Functions, datasheet p.8
   void     allOff();
-  void     mute(bool mute);
-  
-  //  these fails as one need to keep the state per channel.
-  //  so needs to reimplement the whole mute.
-  //  void     muteLeft(bool mute);    //  FAILS
-  //  void     muteRight(bool mute);   //  FAILS
+  void     mute();
+  void     muteOff();
+  void     muteLeft();
+  void     muteRight();
 
-
-  // TODO register clear function to investigate,
+  void     clearRegister();
 };
+
 
 //  -- END OF FILE --
 

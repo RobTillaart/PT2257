@@ -21,13 +21,15 @@ void setup()
   Serial.println();
 
   Wire.begin();
+
+  delay(200);  // needed by PT225x
   myPT.begin();
 
   myPT.allOff();
 
-  myPT.mute(true);
+  myPT.mute();
   Serial.println(myPT.isMuted());  //  expect 1
-  myPT.mute(false);
+  myPT.muteOff();
   Serial.println(myPT.isMuted());  //  expect 0
 }
 
